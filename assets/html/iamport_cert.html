@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=320, initial-scale=1">
+
+    <script defer type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script defer type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+
+    <style type="text/css">
+        html, body {
+			width: 80%;
+			height: 80%;
+		}
+
+        button {
+            /* background-color: #888; */
+            color: #fff;
+            padding: 1rem 2rem;
+            height: 5rem;
+            font-size: 2rem;
+        }
+
+        #dataList {
+            display: none;
+            height: 180px;
+            overflow: auto;
+            left: 0;
+        }
+
+        #scrolldatalist {
+            display: none;
+            height: 240px;
+            overflow: auto;
+        }
+
+        #dataList option, #scrolldatalist option {
+            cursor: pointer;
+        }
+
+        #dataList.show, #scrolldatalist.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<h1 id="header-value"></h1>
+
+<script type="text/javascript">
+
+    const userCode = 'imp54637818'
+    document.addEventListener('DOMContentLoaded', () => {
+        IMP.init(userCode); // 초기화
+    });
+
+    // 본인인증
+    function onClickCertification(phoneNumber) {
+        const data = {
+            merchant_uid: `mid_${new Date().getTime()}`,
+            // birth: '19921010',
+            carrier: '',
+            name: '',
+            phone: phoneNumber,
+            company: '아임포트',
+            popup: false,
+        }
+
+        IMP.certification(data, function(response) {
+            console.log(response);
+            //alert(JSON.stringify(response))
+            CertificationCallback(response);
+        });
+    }
+
+    function CertificationCallback(response) {
+        DartCallbackCertification(JSON.stringify(response));
+        //alert(JSON.stringify(response));
+    }
+</script>
+</body>
+</html>
