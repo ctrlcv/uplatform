@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:uplatform/components/menu_item.dart';
+import 'package:get/get.dart';
+import 'package:uplatform/components/menu_item.dart' as Mi;
 import 'package:uplatform/components/text_title.dart';
 import 'package:uplatform/constants/constants.dart';
 import 'package:uplatform/dialogs/ask_dialog.dart';
@@ -8,7 +9,6 @@ import 'package:uplatform/models/user_model.dart';
 import 'package:uplatform/page/home/home_page.dart';
 import 'package:uplatform/services/login_service.dart';
 import 'package:uplatform/services/network.dart';
-import 'package:get/get.dart';
 
 import '../../menu/exit_uplatform_page.dart';
 import '../expert_edit_profile_page.dart';
@@ -146,8 +146,7 @@ class _ExpertProfileTabState extends State<ExpertProfileTab> {
                           style: TextStyle(
                             fontSize: 13,
                             height: 1.1,
-                            color:
-                                (_userInfo!.userType == "0") ? const Color(0xFF686C73) : const Color(0xFF10A2DC),
+                            color: (_userInfo!.userType == "0") ? const Color(0xFF686C73) : const Color(0xFF10A2DC),
                             fontWeight: FontWeight.w500,
                           ),
                         ),
@@ -165,12 +164,12 @@ class _ExpertProfileTabState extends State<ExpertProfileTab> {
               const SizedBox(height: 28),
               kHorizontalLine,
               const SizedBox(height: 15),
-              MenuItem(
+              Mi.MenuItem(
                 iconData: Icons.list_alt,
                 title: "서비스 요청내역",
                 onPressed: widget.onPressedRequestTab,
               ),
-              MenuItem(
+              Mi.MenuItem(
                 imagePath: "assets/images/icons_won.png",
                 iconData: Icons.list_alt,
                 title: "정산내역",
@@ -178,7 +177,7 @@ class _ExpertProfileTabState extends State<ExpertProfileTab> {
                   Get.toNamed(IncomeListPage.routeName);
                 },
               ),
-              MenuItem(
+              Mi.MenuItem(
                 iconData: Icons.sync,
                 title: "일반회원으로 전환",
                 onPressed: () async {
@@ -226,7 +225,7 @@ class _ExpertProfileTabState extends State<ExpertProfileTab> {
               kHorizontalLine,
               const SizedBox(height: 15),
               if (_userInfo != null)
-                MenuItem(
+                Mi.MenuItem(
                   imagePath: "assets/images/icons_applause.png",
                   iconData: Icons.sync,
                   title: "회원탈퇴",

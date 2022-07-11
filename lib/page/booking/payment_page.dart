@@ -39,7 +39,7 @@ class _PaymentPageState extends State<PaymentPage> {
     _product = argument['product'];
     _paymentData = argument['payment'];
 
-    WidgetsBinding.instance?.addPostFrameCallback((_) async {
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
       if (UniversalPlatform.isWeb) {
         _loadedHtml = await loadHtml();
         if (mounted) {

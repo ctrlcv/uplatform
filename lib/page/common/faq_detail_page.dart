@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_html/flutter_html.dart';
+// import 'package:flutter_html/flutter_html.dart';
 import 'package:get/get.dart';
 import 'package:uplatform/components/border_rounded_button.dart';
 import 'package:uplatform/components/container_progress.dart';
@@ -91,22 +91,22 @@ class _NoticeDetailPageState extends State<FaqDetailPage> {
                   const SizedBox(height: 24),
                   Expanded(
                     child: SingleChildScrollView(
-                      // child: Column(
-                      //   children: [
-                      //     TextParagraph(
-                      //       paraText: _faqDetail!.content ?? "",
-                      //       fontSize: 15,
-                      //       fontColor: Colors.black,
-                      //       fontWeight: FontWeight.w400,
-                      //     ),
-                      //   ],
-                      // ),
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 16),
-                        child: Html(
-                          data: _faqDetail!.content ?? "",
-                        ),
+                      child: Column(
+                        children: [
+                          TextParagraph(
+                            paraText: _faqDetail!.content ?? "",
+                            fontSize: 15,
+                            fontColor: Colors.black,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ],
                       ),
+                      // child: Container(
+                      //   padding: const EdgeInsets.symmetric(horizontal: 16),
+                      //   child: Html(
+                      //     data: _faqDetail!.content ?? "",
+                      //   ),
+                      // ),
                     ),
                   ),
                   const SizedBox(height: 20),

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:uplatform/components/menu_item.dart';
+import 'package:uplatform/components/menu_item.dart' as Mi;
 import 'package:uplatform/constants/constants.dart';
 import 'package:uplatform/dialogs/ask_dialog.dart';
 import 'package:uplatform/models/common_model.dart';
 import 'package:uplatform/models/user_model.dart';
-import 'package:uplatform/page/home/payment_list_page.dart';
 import 'package:uplatform/page/expert/expert_home_page.dart';
 import 'package:uplatform/page/home/home_edit_profile_page.dart';
+import 'package:uplatform/page/home/payment_list_page.dart';
 import 'package:uplatform/page/home/transfer_to_expert_page.dart';
 import 'package:uplatform/page/menu/exit_uplatform_page.dart';
 import 'package:uplatform/services/login_service.dart';
@@ -83,7 +83,6 @@ class _ProfileTabState extends State<ProfileTab> {
                   ),
                 ),
               ),
-
               const SizedBox(height: 40),
               if (_userInfo != null)
                 GestureDetector(
@@ -154,8 +153,7 @@ class _ProfileTabState extends State<ProfileTab> {
                           style: TextStyle(
                             fontSize: 13,
                             height: 1.1,
-                            color:
-                            (_userInfo!.userType == "0") ? const Color(0xFF686C73) : const Color(0xFF10A2DC),
+                            color: (_userInfo!.userType == "0") ? const Color(0xFF686C73) : const Color(0xFF10A2DC),
                             fontWeight: FontWeight.w500,
                           ),
                         ),
@@ -173,12 +171,12 @@ class _ProfileTabState extends State<ProfileTab> {
               const SizedBox(height: 28),
               kHorizontalLine,
               const SizedBox(height: 15),
-              MenuItem(
+              Mi.MenuItem(
                 iconData: Icons.list_alt,
                 title: "서비스 신청내역",
                 onPressed: widget.onPressedBookingTab,
               ),
-              MenuItem(
+              Mi.MenuItem(
                 imagePath: "assets/images/icons_won.png",
                 iconData: Icons.list_alt,
                 title: "결제내역",
@@ -191,7 +189,7 @@ class _ProfileTabState extends State<ProfileTab> {
                   Get.toNamed(PaymentListPage.routeName);
                 },
               ),
-              MenuItem(
+              Mi.MenuItem(
                 iconData: Icons.sync,
                 title: "전문가회원으로 전환",
                 onPressed: () async {
@@ -247,7 +245,7 @@ class _ProfileTabState extends State<ProfileTab> {
               kHorizontalLine,
               const SizedBox(height: 15),
               if (_userInfo != null)
-                MenuItem(
+                Mi.MenuItem(
                   imagePath: "assets/images/icons_applause.png",
                   iconData: Icons.sync,
                   title: "회원탈퇴",

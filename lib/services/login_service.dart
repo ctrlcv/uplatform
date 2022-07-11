@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_naver_login/flutter_naver_login.dart';
 import 'package:get/get.dart';
-import 'package:kakao_flutter_sdk/all.dart';
+import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
 import 'package:uplatform/models/common_model.dart';
 import 'package:uplatform/models/user_model.dart';
 import 'package:uplatform/page/start_page.dart';
@@ -269,10 +269,10 @@ class LoginService {
   }
 }
 
-class AlarmCountController extends GetxController{
+class AlarmCountController extends GetxController {
   int unReadCount = 0;
 
-  void setUnReadCount(int count){
+  void setUnReadCount(int count) {
     unReadCount = count;
     update();
   }

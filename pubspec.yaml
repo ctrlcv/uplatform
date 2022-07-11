@@ -56,7 +56,7 @@ dev_dependencies:
   dio: ^4.0.4
   http: ^0.13.4
   webview_flutter: ^2.0.13
-  kakao_flutter_sdk: ^0.9.0
+  kakao_flutter_sdk: ^1.2.1
   iamport_flutter: ^0.10.1
   flutter_naver_login: ^1.2.4
   iamport_webview_flutter: ^3.0.4
@@ -69,8 +69,7 @@ dev_dependencies:
   extended_image: ^6.0.1
   fluttertoast: ^8.0.8
   webviewx: ^0.2.1
-  overlay_support: ^1.2.1
-  flutter_html: ^2.2.1
+  overlay_support: ^2.0.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

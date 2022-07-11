@@ -45,7 +45,7 @@ class _QnaInputPageState extends State<QnaInputPage> {
 
     super.initState();
 
-    WidgetsBinding.instance?.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       if (Get.arguments != null) {
         _qnaId = Get.arguments;
         debugPrint("QnaInputPage qnaId: $_qnaId");

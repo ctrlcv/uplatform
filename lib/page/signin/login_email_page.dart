@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_naver_login/flutter_naver_login.dart';
 import 'package:get/get.dart';
-import 'package:kakao_flutter_sdk/auth.dart';
+import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
 import 'package:universal_platform/universal_platform.dart';
 import 'package:uplatform/components/border_rounded_button.dart';
 import 'package:uplatform/components/border_rounded_image_button.dart';

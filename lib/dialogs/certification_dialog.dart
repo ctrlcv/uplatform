@@ -2,9 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:get/get.dart';
 import 'package:uplatform/constants/constants.dart';
 import 'package:webviewx/webviewx.dart';
-import 'package:get/get.dart';
 
 class CertificationDialog extends StatefulWidget {
   const CertificationDialog({Key? key, required this.phoneNumber}) : super(key: key);
@@ -24,7 +24,7 @@ class _CertificationDialogState extends State<CertificationDialog> {
   void initState() {
     super.initState();
 
-    WidgetsBinding.instance?.addPostFrameCallback((_) async {
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
       _loadedHtml = await loadHtml();
       if (mounted) {
         setState(() {});

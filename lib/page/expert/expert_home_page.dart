@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:uplatform/constants/constants.dart';
 import 'package:uplatform/models/user_model.dart';
@@ -12,7 +13,6 @@ import 'package:uplatform/page/menu/navigation_drawer.dart';
 import 'package:uplatform/services/firebase_service.dart';
 import 'package:uplatform/services/login_service.dart';
 import 'package:uplatform/services/network.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 class ExpertHomePage extends StatefulWidget {
   const ExpertHomePage({Key? key}) : super(key: key);
@@ -43,7 +43,7 @@ class _ExpertHomePageState extends State<ExpertHomePage> with SingleTickerProvid
 
     loadUserInfo();
 
-    WidgetsBinding.instance!.addPostFrameCallback((_) async {
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
       _fToast = FToast();
       _fToast!.init(context);
 

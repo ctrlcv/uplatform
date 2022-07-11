@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:uplatform/components/custom_appbar.dart';
-import 'package:uplatform/components/menu_item.dart';
+import 'package:uplatform/components/menu_item.dart' as Mi;
 import 'package:uplatform/constants/constants.dart';
 import 'package:uplatform/models/user_model.dart';
 import 'package:uplatform/page/booking/booking_type_page.dart';
@@ -99,14 +99,14 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
                 const SizedBox(height: 22),
                 kHorizontalLine,
                 const SizedBox(height: 14),
-                MenuItem(
+                Mi.MenuItem(
                   iconData: Icons.notifications_none_outlined,
                   title: "알림",
                   onPressed: () {
                     Get.toNamed(AlarmListPage.routeName);
                   },
                 ),
-                MenuItem(
+                Mi.MenuItem(
                   iconData: Icons.system_security_update_good_outlined,
                   title: "푸시알림",
                   onPressed: () {
@@ -121,7 +121,7 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
                 const SizedBox(height: 14),
                 kHorizontalLine,
                 const SizedBox(height: 14),
-                MenuItem(
+                Mi.MenuItem(
                   iconData: Icons.check,
                   title: (_loginUser == null || _loginUser!.type == "0") ? "서비스 신청" : "서비스 지원",
                   onPressed: () {
@@ -138,7 +138,7 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
                     }
                   },
                 ),
-                MenuItem(
+                Mi.MenuItem(
                   iconData: Icons.list_alt,
                   title: (_loginUser == null || _loginUser!.type == "0") ? "예약내역" : "지원내역",
                   onPressed: () {
@@ -156,7 +156,7 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
                     }
                   },
                 ),
-                MenuItem(
+                Mi.MenuItem(
                   iconData: Icons.monetization_on_outlined,
                   imagePath: "assets/images/icons_won.png",
                   title: (_loginUser == null || _loginUser!.type == "0") ? "결제내역" : "정산내역",
@@ -173,7 +173,7 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
                 const SizedBox(height: 14),
                 kHorizontalLine,
                 const SizedBox(height: 14),
-                MenuItem(
+                Mi.MenuItem(
                   iconData: Icons.support_agent_outlined,
                   title: "고객센터",
                   onPressed: () {
@@ -181,7 +181,7 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
                     Get.back();
                   },
                 ),
-                MenuItem(
+                Mi.MenuItem(
                   iconData: Icons.privacy_tip_outlined,
                   title: "서비스 약관",
                   onPressed: () {
@@ -189,7 +189,7 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
                   },
                 ),
                 if (_isLogin)
-                  MenuItem(
+                  Mi.MenuItem(
                     iconData: Icons.logout,
                     title: "로그아웃",
                     onPressed: () {

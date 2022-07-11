@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
-import 'package:kakao_flutter_sdk/common.dart';
+import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
+import 'package:overlay_support/overlay_support.dart';
 import 'package:universal_platform/universal_platform.dart';
 import 'package:uplatform/page/booking/booking_detail_page.dart';
 import 'package:uplatform/page/booking/booking_education_page.dart';
@@ -17,16 +18,13 @@ import 'package:uplatform/page/booking/booking_space_page.dart';
 import 'package:uplatform/page/booking/booking_space_step01_page.dart';
 import 'package:uplatform/page/booking/booking_space_step02_page.dart';
 import 'package:uplatform/page/booking/booking_type_page.dart';
+import 'package:uplatform/page/booking/payment_page.dart';
 import 'package:uplatform/page/common/address_search_page.dart';
 import 'package:uplatform/page/common/alarm_list_page.dart';
 import 'package:uplatform/page/common/change_password_page.dart';
 import 'package:uplatform/page/common/faq_detail_page.dart';
 import 'package:uplatform/page/common/find_address_page.dart';
 import 'package:uplatform/page/common/notice_detail_page.dart';
-import 'package:uplatform/page/expert/income_detail_page.dart';
-import 'package:uplatform/page/expert/income_list_page.dart';
-import 'package:uplatform/page/expert/transfer_to_normal_page.dart';
-import 'package:uplatform/page/home/payment_list_page.dart';
 import 'package:uplatform/page/common/phone_certification.dart';
 import 'package:uplatform/page/common/qna_detail_page.dart';
 import 'package:uplatform/page/common/qna_input_page.dart';
@@ -34,15 +32,18 @@ import 'package:uplatform/page/common/search_address_page.dart';
 import 'package:uplatform/page/expert/apply_detail_page.dart';
 import 'package:uplatform/page/expert/expert_edit_profile_page.dart';
 import 'package:uplatform/page/expert/expert_home_page.dart';
+import 'package:uplatform/page/expert/income_detail_page.dart';
+import 'package:uplatform/page/expert/income_list_page.dart';
 import 'package:uplatform/page/expert/request_detail_page.dart';
 import 'package:uplatform/page/expert/request_finish_page.dart';
+import 'package:uplatform/page/expert/transfer_to_normal_page.dart';
 import 'package:uplatform/page/home/home_clean_space_detail_page.dart';
 import 'package:uplatform/page/home/home_edit_profile_page.dart';
 import 'package:uplatform/page/home/home_education_detail_page.dart';
 import 'package:uplatform/page/home/home_page.dart';
 import 'package:uplatform/page/home/home_recruit_member_page.dart';
 import 'package:uplatform/page/home/home_restaurant_detail_page.dart';
-import 'package:uplatform/page/booking/payment_page.dart';
+import 'package:uplatform/page/home/payment_list_page.dart';
 import 'package:uplatform/page/home/transfer_to_expert_page.dart';
 import 'package:uplatform/page/menu/exit_uplatform_page.dart';
 import 'package:uplatform/page/menu/serice_terms_page.dart';
@@ -64,7 +65,6 @@ import 'package:uplatform/page/signup/signup_normal_by_sns_page.dart';
 import 'package:uplatform/page/signup/signup_normal_by_uplatform_page.dart';
 import 'package:uplatform/page/signup/signup_terms_page.dart';
 import 'package:uplatform/page/start_page.dart';
-import 'package:overlay_support/overlay_support.dart';
 
 //TODO : env 파일 분리
 const kakaoClientKey = 'abf73a9bacb2a13333de82cd87a8ecaf';
@@ -78,7 +78,10 @@ void main() {
     ),
   );
 
-  KakaoContext.clientId = kakaoClientKey;
+  KakaoSdk.init(
+    nativeAppKey: kakaoClientKey,
+    loggingEnabled: true,
+  );
 
   runApp(
     (UniversalPlatform.isWeb)

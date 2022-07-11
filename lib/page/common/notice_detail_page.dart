@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:uplatform/components/border_rounded_button.dart';
 import 'package:uplatform/components/container_progress.dart';
 import 'package:uplatform/components/custom_appbar.dart';
@@ -6,9 +7,8 @@ import 'package:uplatform/components/text_paragraph.dart';
 import 'package:uplatform/components/text_title.dart';
 import 'package:uplatform/constants/constants.dart';
 import 'package:uplatform/models/notice_model.dart';
-import 'package:get/get.dart';
 import 'package:uplatform/services/network.dart';
-import 'package:flutter_html/flutter_html.dart';
+// import 'package:flutter_html/flutter_html.dart';
 
 class NoticeDetailPage extends StatefulWidget {
   const NoticeDetailPage({Key? key}) : super(key: key);
@@ -92,22 +92,22 @@ class _NoticeDetailPageState extends State<NoticeDetailPage> {
                   const SizedBox(height: 24),
                   Expanded(
                     child: SingleChildScrollView(
-                      // child: Column(
-                      //   children: [
-                      //     TextParagraph(
-                      //       paraText: "${_noticeDetail!.content}",
-                      //       fontSize: 15,
-                      //       fontColor: Colors.black,
-                      //       fontWeight: FontWeight.w400,
-                      //     ),
-                      //   ],
-                      // ),
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 16),
-                        child: Html(
-                          data: _noticeDetail!.content ?? "",
-                        ),
+                      child: Column(
+                        children: [
+                          TextParagraph(
+                            paraText: "${_noticeDetail!.content}",
+                            fontSize: 15,
+                            fontColor: Colors.black,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ],
                       ),
+                      // child: Container(
+                      //   padding: const EdgeInsets.symmetric(horizontal: 16),
+                      //   child: Html(
+                      //     data: _noticeDetail!.content ?? "",
+                      //   ),
+                      // ),
                     ),
                   ),
                   const SizedBox(height: 20),

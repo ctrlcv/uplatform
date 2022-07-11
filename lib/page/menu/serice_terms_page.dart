@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:uplatform/constants/constants.dart';
 
 import '../../components/custom_appbar.dart';
-import '../../components/menu_item.dart';
+import '../../components/menu_item.dart' as Mi;
 import '../../components/text_title.dart';
-import 'package:get/get.dart';
-
 import '../signin/terms_page.dart';
 
 class ServiceTermsPage extends StatefulWidget {
@@ -39,7 +38,7 @@ class _ServiceTermsPageState extends State<ServiceTermsPage> {
             const SizedBox(height: 28),
             kHorizontalLine,
             const SizedBox(height: 20),
-            MenuItem(
+            Mi.MenuItem(
               iconData: Icons.privacy_tip_outlined,
               title: "서비스 약관",
               isNoIcon: true,
@@ -47,7 +46,7 @@ class _ServiceTermsPageState extends State<ServiceTermsPage> {
                 Get.toNamed(TermsPage.routeName, arguments: "서비스 이용약관");
               },
             ),
-            MenuItem(
+            Mi.MenuItem(
               iconData: Icons.privacy_tip_outlined,
               title: "개인정보 처리방침",
               isNoIcon: true,

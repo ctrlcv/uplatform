@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:uplatform/components/no_item_panel.dart';
 import 'package:uplatform/components/text_title.dart';
-import 'package:uplatform/constants/constants.dart';
-import 'package:uplatform/models/notice_model.dart';
 import 'package:uplatform/page/common/tab/faq_tab.dart';
 import 'package:uplatform/page/common/tab/notice_tab.dart';
 import 'package:uplatform/page/common/tab/qna_tab.dart';
@@ -26,7 +23,7 @@ class _ExpertHelpCenterTabState extends State<ExpertHelpCenterTab> with SingleTi
     super.initState();
     _tabController = TabController(vsync: this, length: _helpCenterTabs.length);
 
-    WidgetsBinding.instance!.addPostFrameCallback((_) async {
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
       _tabController!.animateTo(widget.startTab, duration: const Duration(milliseconds: 300), curve: Curves.easeOut);
     });
   }

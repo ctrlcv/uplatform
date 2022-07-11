@@ -21,7 +21,7 @@ class _HelpCenterTabState extends State<HelpCenterTab> with SingleTickerProvider
     super.initState();
     _tabController = TabController(vsync: this, length: _helpCenterTabs.length);
 
-    WidgetsBinding.instance!.addPostFrameCallback((_) async {
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
       _tabController!.animateTo(widget.startTab, duration: const Duration(milliseconds: 300), curve: Curves.easeOut);
     });
   }
